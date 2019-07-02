@@ -1,0 +1,43 @@
+<app-auth-content>
+  <div class="app-title">
+    <div>
+      <h1><i class="fa fa-file-text"></i> จัดการข้อมูลโปรโมชัน</h1>
+      <p>หน้าจัดการข้อมูลโปรโมชัน</p>
+    </div>
+    <ul class="app-breadcrumb breadcrumb">
+      <li class="breadcrumb-item">
+        <i class="fa fa-home fa-lg"></i>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="#">จัดการโปรโมชัน</a>
+      </li>
+    </ul>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="tile">
+
+        <!-- ส่วนหัว -->
+        <div class="tile-title-w-btn">
+          <h3 class="title">
+              <i class="fa fa-th-list"></i> จัดการโปรโมชัน
+          </h3>
+        </div>
+
+        <!-- ส่วนฟอร์ม -->
+        <div class="tile-body"></div>
+            <form [formGroup]="form" (submit)="onSubmit()">
+
+
+                <hr>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">
+                      <i class="fa fa-save"></i> บันทึกข้อมูลโปรโมชัน
+                    </button>
+                </div>
+            </form>
+
+      </div>
+    </div>
+  </div>
+</app-auth-content>

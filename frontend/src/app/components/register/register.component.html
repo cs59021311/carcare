@@ -1,0 +1,134 @@
+<section class="material-half-bg">
+    <div class="cover"></div>
+</section>
+<section class="login-content">
+    <div class="logo">
+        <br>
+        <h1>ลงทะเบียน</h1>
+    </div>
+    <div class="login-box">
+        <form class="login-form" (submit)="onSubmit()" [noValidate]= false>
+            <h3 class="login-head">
+                <i class="fa fa-lg fa-fw fa-user-plus"></i>
+                ข้อมูลส่วนตัว
+            </h3>
+
+            <div class="form-group">
+                <label class="control-label">ชื่อ</label>
+                <input class="form-control" [(ngModel)]="model.mem_fname" name="mem_fname" type="text" placeholder="กรุณากรอกข้อมูล">
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">นามสกุล</label>
+                <input class="form-control" [(ngModel)]="model.mem_lname" name="mem_lname" type="text" placeholder="กรุณากรอกข้อมูล">
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">เลขประจำตัวประชาชน</label>
+                <input class="form-control" type="number" [(ngModel)]="model.mem_id_card" name="mem_id_card" placeholder="กรุณากรอกข้อมูล">
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">อีเมล์</label>
+                <input class="form-control"  type="text" [(ngModel)]="model.mem_email" name="mem_email" placeholder="กรุณากรอกข้อมูล">
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">รหัสผ่าน</label>
+                <input class="form-control" [(ngModel)]="model.mem_password" name="mem_password" type="password" placeholder="กรุณากรอกข้อมูล">
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">ยืนยันรหัสผ่าน</label>
+                <input class="form-control" type="password" [(ngModel)]="model.mem_cpassword" name="mem_cpassword" placeholder="กรุณากรอกข้อมูล">
+            </div>
+
+            <br>
+            <h3 class="login-head">
+                <i class="fa fa-lg fa-fw fa fa-university"></i>
+                ข้อมูลร้าน
+            </h3>
+
+            <div class="form-group">
+                <label class="control-label">ชื่อร้าน</label>
+                <input class="form-control" type="text" [(ngModel)]="model.mem_service_name" name="mem_service_name" placeholder="กรุณากรอกข้อมูล">
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">รายละเอียด</label>
+                <textarea class="form-control" [(ngModel)]="model.mem_detials" name="mem_detials" placeholder="กรุณากรอกข้อมูล"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">ที่อยู่ (ตรอกซอย,บ้านเลขที่)</label>
+                <textarea class="form-control" [(ngModel)]="model.mem_address" name="mem_address" placeholder="กรุณากรอกข้อมูล"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">จังหวัด</label>
+                <input class="form-control" type="text" [(ngModel)]="model.mem_province" name="mem_province" placeholder="กรุณากรอกข้อมูล">
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">อำเภอ</label>
+                <input class="form-control" type="text" [(ngModel)]="model.mem_canton" name="mem_canton" placeholder="กรุณากรอกข้อมูล">
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">ตำบล</label>
+                <input class="form-control" type="text" [(ngModel)]="model.mem_district" name="mem_district" placeholder="กรุณากรอกข้อมูล">
+            </div>
+
+            <!-- <div class="form-group">
+                <label for="">จังหวัด</label>
+                <select class="form-control" [(ngModel)]="model.mem_province" name="mem_province">
+                    <option value="">เลือกจังหวัด</option>
+                    <option value="">พิษณุโลก</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="">อำเภอ</label>
+                <select class="form-control" [(ngModel)]="model.mem_canton" name="mem_canton">
+                    <option value="">เลือกอำเภอ</option>
+                    <option value="">วังทอง</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="">ตำบล</label>
+                <select class="form-control" [(ngModel)]="model.mem_district" name="mem_district">
+                    <option value="">เลือกตำบล</option>
+                    <option value="">บ้านกลาง</option>
+                </select>
+            </div> -->
+            <div class="form-group">
+                <label class="control-label">เบอร์โทรศัพท์</label>
+                <input class="form-control" type="text" [(ngModel)]="model.mem_phone" name="mem_phone" placeholder="กรุณากรอกข้อมูล">
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">รูปร้าน</label>
+                <div class="form-group">
+                    <input type="file" #inputFile>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">ใบอนุญาตประกอบกิจการ</label>
+                <div class="form-group">
+                    <input type="file" #inputFile>
+                </div>
+            </div>
+
+            <div class="form-group btn-container">
+                <button class="btn btn-primary btn-block">
+                    <i class="fa fa-sign-in fa-lg fa-fw"></i>
+                    ลงทะเบียน
+                </button>
+
+                <div class="mt-3 text-center semibold-text">
+                    <a [routerLink]="['/', Url.Login]">เข้าสู่ระบบ</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

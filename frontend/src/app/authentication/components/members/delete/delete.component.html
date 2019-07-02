@@ -1,0 +1,21 @@
+<!-- Delete Modal HTML -->
+<div id="deleteEmployeeModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form (submit)="onSubmit()">
+                <div class="modal-header">
+                    <h4 class="modal-title">ลบข้อมูลสมาชิก</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p> คุณแน่ใจหรือไม่ว่าต้องการลบรายการนี้? </p>
+                    <p class="text-warning"><small>การกระทำนี้ไม่สามารถเลิกทำได้</small></p>
+                </div>
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-default" data-dismiss="modal" value="ยกเลิก">
+                    <input type="submit" class="btn btn-danger" value="ลบ">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
