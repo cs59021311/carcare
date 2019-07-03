@@ -31,7 +31,7 @@
                 <a href="#editEmployeeModal" class="edit" data-toggle="modal" (click)="onEditModal(item)">
                     <i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>
                 </a>
-                <a href="#detailEmployeeModal" class="detail" data-toggle="modal" >
+                <a href="#detailEmployeeModal" class="detail" data-toggle="modal" [routerLink]="['/', AppURL.Authen, AuthURL.Detailmember]" >
                     <i class="fa fa-info" data-toggle="tooltip" title="Detail"></i>
                 </a>
                 <a href="#deleteEmployeeModal" class="delete" data-toggle="modal" (click)="onDeleteModal(item)">

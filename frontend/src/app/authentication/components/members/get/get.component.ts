@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MemberService, IMember } from '../member.service';
+import { AppURL } from 'src/app/app.url';
+import { AuthURL } from 'src/app/authentication/authentication.url';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-get',
@@ -11,11 +14,17 @@ export class GetComponent implements OnInit {
   public memberItems: IMember[] = [];
   public checkAll: boolean; // สร้างตัวแปลมาเก็บค่า check ทั้งหมด
 
-  constructor(private memberService: MemberService) { }
+  constructor(
+    private memberService: MemberService,
+    private router: Router
+    ) { }
+
+    AppURL = AppURL;
+    AuthURL = AuthURL;
 
   ngOnInit() {
     this.memberService
-      .getItems() //เรียกใช้ getItems จาก memberService 
+      .getItems() //เรียกใช้ getItems จาก memberService
       .subscribe(result => {
         // console.log(result);
         this.memberItems = result; //นำข้อมูลมาเก็บไว้ที่ memberItems จากนั้นข้อมูลจะถูกส่งไปวนลูปในหน้า HTML Get ซึ่งค่าของไฟล์เราได้มาจากไฟล์ Get.php ของทางฝั่ง Backend
@@ -23,7 +32,7 @@ export class GetComponent implements OnInit {
 
   }
 
-  // เมื่อมีการกดปุ่มแก้ไขของแถวนั้นๆ 
+  // เมื่อมีการกดปุ่มแก้ไขของแถวนั้นๆ
   onEditModal(item: IMember) {
     Object.assign(this.memberService.updateModel, item);
   }
@@ -48,8 +57,8 @@ export class GetComponent implements OnInit {
   // เมื่อมีการ checkbox ในแต่ละรายการของตาราง
   onCheck() {
     // ตรวจสอบว่ามีการ Check เต็มหรือเปล่า ว่า item.checked ต้องมีทั้งหมด
-    // ซึ่งจะมีทั้งหมดด้วย .length == 0 เราจึงต้องทำตรงกันข้าม คือมันจะต้องไม่ Check  
-    if (this.memberItems.filter(item => !item.checked).length == 0) { //ถ้าไม่มีการเช็ค 
+    // ซึ่งจะมีทั้งหมดด้วย .length == 0 เราจึงต้องทำตรงกันข้าม คือมันจะต้องไม่ Check
+    if (this.memberItems.filter(item => !item.checked).length == 0) { //ถ้าไม่มีการเช็ค
       this.checkAll = true; // ถ้าไม่เท่ากับ 0 ก็ต้องเป็น T
     }
     else if (this.memberItems.filter(item => item.checked).length == 0) {
@@ -60,7 +69,7 @@ export class GetComponent implements OnInit {
 
   // เก็บค่าไอดีที่โดนเลือกลบหลายรายการ
   onStoreMemberDelete() {
-    this.memberService.deleteAllModel 
+    this.memberService.deleteAllModel
     = this.memberItems // เราจะค้นหาก่อนว่า ตัวไหนถูกเช็คบ้าง ถ้ามีการ item.checked
       .filter(item => item.checked)
       .map(item => item.mem_id);
