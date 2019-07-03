@@ -1,0 +1,112 @@
+<app-auth-content>
+    <div class="app-title">
+      <div>
+        <h1><i class="fa fa-user"></i> รายละเอียดสมาชิก</h1>
+        <p>หน้ารายละเอียดสมาชิก</p>
+      </div>
+      <ul class="app-breadcrumb breadcrumb">
+        <li class="breadcrumb-item">
+          <i class="fa fa-home fa-lg"></i>
+        </li>
+        <li class="breadcrumb-item">
+          <a href="#">รายละเอียดสมาชิก</a>
+        </li>
+      </ul>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="tile">
+
+          <!-- ส่วนหัว -->
+          <div class="tile-title-w-btn">
+            <h3 class="title">
+                <i class="fa fa-file-text"></i> รายละเอียดสมาชิก
+            </h3>
+          </div>
+
+          <!-- ส่วนฟอร์ม -->
+          <div class="tile-body"></div>
+              <form [formGroup]="form" (submit)="onSubmit()">
+
+                      <div class="tile-body">
+                        <form class="form-horizontal">
+                          <div class="form-group row">
+                            <label class="control-label col-md-3">ชื่อ-นามสกุล :</label>
+                            <div class="col-md-8">
+                              <input class="form-control" type="text" placeholder="">
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                              <label class="control-label col-md-3">เลขประจำตัวประชาชน :</label>
+                              <div class="col-md-8">
+                                <input class="form-control" type="text" placeholder="">
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                              <label class="control-label col-md-3">อีเมล์ :</label>
+                                <div class="col-md-8">
+                                <input class="form-control" type="email" placeholder="">
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                              <label class="control-label col-md-3">ชื่อร้าน :</label>
+                              <div class="col-md-8">
+                                <input class="form-control" type="text" placeholder="">
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                            <label class="control-label col-md-3">รายละเอียด :</label>
+                            <div class="col-md-8">
+                              <textarea class="form-control" rows="4" placeholder=""></textarea>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                              <label class="control-label col-md-3">ที่อยู่ :</label>
+                              <div class="col-md-8">
+                                <textarea class="form-control" rows="4" placeholder=""></textarea>
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                              <label class="control-label col-md-3">เบอร์โทรศัพท์ :</label>
+                              <div class="col-md-8">
+                                <input class="form-control" type="text" placeholder="">
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                              <label class="control-label col-md-3">รูปร้าน :</label>
+                              
+                          </div>
+                          <div class="form-group row">
+                              <label class="control-label col-md-3">รูปใบอนุญาตประกอบกิจการ :</label>
+
+                          </div>
+                          <!-- <div class="form-group row">
+                            <label class="control-label col-md-3">Gender</label>
+                            <div class="col-md-9">
+                              <div class="form-check">
+                                <label class="form-check-label">
+                                  <input class="form-check-input" type="radio" name="gender">Male
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <label class="form-check-label">
+                                  <input class="form-check-input" type="radio" name="gender">Female
+                                </label>
+                              </div>
+                            </div>
+                          </div> -->
+
+
+                        </form>
+                      </div>
+
+
+
+                  <hr>
+
+              </form>
+
+        </div>
+      </div>
+    </div>
+  </app-auth-content>

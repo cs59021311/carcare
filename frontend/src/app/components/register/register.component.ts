@@ -59,7 +59,7 @@ export class RegisterComponent implements IRegisterComponent {
                 result => {
                     console.log(result);
                 },
-                excep => alert(excep.error.message)
+                // excep => alert(excep.error.message)
             );
         this.alert.notify('ลงทะเบียนสำเร็จ!', 'info');  // ลงทะเบียนสำำเร็จให้ แสดง alert
         this.router.navigate(['/', AppURL.Login]);  // เด้งไปที่หน้า login

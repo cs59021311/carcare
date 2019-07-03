@@ -17,6 +17,8 @@ import { ManageServiceRequestsComponent } from './components/manage-service-requ
 import { ServiceRequestInformationComponent } from './components/service-request-information/service-request-information.component';
 import { PromotionComponent } from './components/promotion/promotion.component';
 import { ManagereFundsComponent } from './components/managere-funds/managere-funds.component';
+import { EditMembersComponent } from './components/edit-members/edit-members.component';
+import { DetailMembersComponent } from './components/detail-members/detail-members.component';
 
 const RouteLists: Routes = [
     { path: '', redirectTo: AuthURL.Profile, pathMatch: 'full' }, // หน้า default
@@ -51,6 +53,8 @@ const RouteLists: Routes = [
     { path: AuthURL.Manageservicerequests, component: ManageServiceRequestsComponent },
     { path: AuthURL.Servicerequestinformation, component: ServiceRequestInformationComponent },
     { path: AuthURL.Managerefunds, component: ManagereFundsComponent },
+    { path: AuthURL.Editmember, component: EditMembersComponent },
+    { path: AuthURL.Detailmember, component: DetailMembersComponent },
 ];
 
 export const AuthenticationRouting = RouterModule.forChild(RouteLists);

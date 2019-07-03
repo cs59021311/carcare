@@ -7,12 +7,14 @@ import { RegisterComponent } from './components/register/register.component';
 import { AppRouting } from './app.routing';
 import { SharedsModule } from './shareds/shareds.module';
 import { HttpClientModule } from '@angular/common/http';
+import { RegisterMemberComponent } from './components/register-member/register-member.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    RegisterMemberComponent
   ],
   imports: [
     BrowserModule,

@@ -8,7 +8,7 @@
     </div>
     <div class="login-box">
         <form class="login-form" (submit)="onSubmit()" [noValidate]= false>
-            <h3 class="login-head">
+            <!-- <h3 class="login-head">
                 <i class="fa fa-lg fa-fw fa-user-plus"></i>
                 ข้อมูลส่วนตัว
             </h3>
@@ -43,7 +43,7 @@
                 <input class="form-control" type="password" [(ngModel)]="model.mem_cpassword" name="mem_cpassword" placeholder="กรุณากรอกข้อมูล">
             </div>
 
-            <br>
+            <br> -->
             <h3 class="login-head">
                 <i class="fa fa-lg fa-fw fa fa-university"></i>
                 ข้อมูลร้าน
@@ -119,7 +119,15 @@
                 </div>
             </div>
 
-            <div class="form-group btn-container">
+            <div class="form-group">
+                    <a class="btn btn-primary" [routerLink]="['/', Url.Registermember]" >
+                       <i class="fa fa-arrow-left"></i>
+                     <span>กลับ</span>
+                    </a>
+            </div>
+
+            <br>
+             <div class="form-group btn-container">
                 <button class="btn btn-primary btn-block">
                     <i class="fa fa-sign-in fa-lg fa-fw"></i>
                     ลงทะเบียน
@@ -129,6 +137,7 @@
                     <a [routerLink]="['/', Url.Login]">เข้าสู่ระบบ</a>
                 </div>
             </div>
+
         </form>
     </div>
 </section>

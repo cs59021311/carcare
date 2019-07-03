@@ -13,5 +13,7 @@ export const AuthURL = {
   Useservice: 'use-services',
   Manageservicerequests: 'Manage-service-requests',
   Servicerequestinformation: 'Service-request-information',
-  Managerefunds: 'managere-funds'
+  Managerefunds: 'managere-funds',
+  Editmember: 'edit-members',
+  Detailmember: 'detail-members'
 };

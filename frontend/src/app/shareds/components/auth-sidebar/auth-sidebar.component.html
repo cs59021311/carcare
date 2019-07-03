@@ -32,11 +32,21 @@
                         <i class="icon fa fa-circle-o"></i> รายการสมาชิก
                     </a>
                 </li>
-                <!-- <li *ngIf="UserLogin.role == Role.Admin">
+                <li *ngIf="UserLogin.role == Role.Admin">
                     <a class="treeview-item" [routerLink]="['/', AppURL.Authen, AuthURL.MemberCreate]" routerLinkActive="active">
                         <i class="icon fa fa-circle-o"></i> เพิ่มสมาชิกใหม่
                     </a>
-                </li> -->
+                </li>
+                <li *ngIf="UserLogin.role == Role.Admin">
+                    <a class="treeview-item" [routerLink]="['/', AppURL.Authen, AuthURL.Editmember]" routerLinkActive="active">
+                        <i class="icon fa fa-circle-o"></i> แก้ไขสมาชิก
+                    </a>
+                </li>
+                <li *ngIf="UserLogin.role == Role.Admin">
+                    <a class="treeview-item" [routerLink]="['/', AppURL.Authen, AuthURL.Detailmember]" routerLinkActive="active">
+                        <i class="icon fa fa-circle-o"></i> รายละเอียดสมาชิก
+                    </a>
+                </li>
             </ul>
         </li>
         <li *ngIf="UserLogin.role == Role.Employee" class="treeview" routerLinkActive="is-expanded">

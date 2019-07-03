@@ -25,6 +25,8 @@ import { PromotionComponent } from './components/promotion/promotion.component';
 import { ManageServiceRequestsComponent } from './components/manage-service-requests/manage-service-requests.component';
 import { ServiceRequestInformationComponent } from './components/service-request-information/service-request-information.component';
 import { ManagereFundsComponent } from './components/managere-funds/managere-funds.component';
+import { EditMembersComponent } from './components/edit-members/edit-members.component';
+import { DetailMembersComponent } from './components/detail-members/detail-members.component';
 
 @NgModule({
     imports: [
@@ -55,7 +57,9 @@ import { ManagereFundsComponent } from './components/managere-funds/managere-fun
         PromotionComponent,
         ManageServiceRequestsComponent,
         ServiceRequestInformationComponent,
-        ManagereFundsComponent
+        ManagereFundsComponent,
+        EditMembersComponent,
+        DetailMembersComponent
 
     ]
 })
