@@ -7,44 +7,51 @@
         <h1>ลงทะเบียน</h1>
     </div>
     <div class="login-box">
-        <form class="login-form"  [noValidate]= false>
+        <form class="login-form" #myForm="ngForm" (ngSubmit)="onSubmit()" [noValidate]=false>
             <h3 class="login-head">
                 <i class="fa fa-lg fa-fw fa-user-plus"></i>
                 ข้อมูลส่วนตัว
             </h3>
-        <!-- (submit)="onSubmit()"-->
+            <!-- (submit)="onSubmit()"-->
             <div class="form-group">
                 <label class="control-label">ชื่อ</label>
-                <input class="form-control"  name="mem_fname" type="text" placeholder="กรุณากรอกข้อมูล">
+                <input class="form-control" [(ngModel)]="model.temp_fname" name="temp_fname" type="text"
+                    placeholder="กรุณากรอกข้อมูล">
                 <!-- [(ngModel)]="model.mem_fname" -->
             </div>
 
             <div class="form-group">
                 <label class="control-label">นามสกุล</label>
-                <input class="form-control" name="mem_lname" type="text" placeholder="กรุณากรอกข้อมูล">
+                <input class="form-control" [(ngModel)]="model.temp_lname" name="temp_lname" type="text"
+                    placeholder="กรุณากรอกข้อมูล">
             </div>
 
             <div class="form-group">
                 <!-- <label class="control-label">เลขประจำตัวประชาชน</label>
                 <input class="form-control" type="number" name="mem_id_card" placeholder="กรุณากรอกข้อมูล"> -->
                 <label class="control-label">เลขบัตรประจำตัวประชาชน</label>
-                <input class="form-control" name="mem_id_card" type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                  maxlength="13" onkeypress="return event.charCode >= 48 && event.charCode <= 57"  placeholder="กรุณากรอกข้อมูล">
+                <input class="form-control" [(ngModel)]="model.temp_id_card" name="temp_id_card" type="number"
+                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                    maxlength="13" onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                    placeholder="กรุณากรอกข้อมูล">
             </div>
 
             <div class="form-group">
                 <label class="control-label">อีเมล์</label>
-                <input class="form-control"  type="text" name="mem_email" placeholder="กรุณากรอกข้อมูล">
+                <input class="form-control" type="text" [(ngModel)]="model.temp_email" name="temp_email"
+                    placeholder="กรุณากรอกข้อมูล">
             </div>
 
             <div class="form-group">
                 <label class="control-label">รหัสผ่าน</label>
-                <input class="form-control" name="mem_password" type="password" placeholder="กรุณากรอกข้อมูล">
+                <input class="form-control" [(ngModel)]="model.temp_password" name="temp_password" type="password"
+                    placeholder="กรุณากรอกข้อมูล">
             </div>
 
             <div class="form-group">
                 <label class="control-label">ยืนยันรหัสผ่าน</label>
-                <input class="form-control" type="password" name="mem_cpassword" placeholder="กรุณากรอกข้อมูล">
+                <input class="form-control" type="password" [(ngModel)]="model.temp_cpassword" name="temp_cpassword"
+                    placeholder="กรุณากรอกข้อมูล">
             </div>
 
             <!-- <div class="form-group">
@@ -53,14 +60,19 @@
                 </button>
             </div> -->
 
-                <div class="form-group">
-                    <div class="pull-right">
-                        <a class="btn btn-primary" [routerLink]="['/', Url.Register]" >
-                          ต่อไป <i class="fa fa-arrow-right"></i>
-                         <span> </span>
-                        </a>
-                      </div>
+
+            <div class="form-group">
+                <div class="pull-right">
+                    <button class="btn btn-primary">
+                        ต่อไป <i class="fa fa-arrow-right"></i>
+                        <span> </span>
+                        <!-- <a class="btn btn-primary" [routerLink]="['/', Url.Register]">
+                            ต่อไป <i class="fa fa-arrow-right"></i>
+                            <span> </span>
+                        </a> -->
+                    </button>
                 </div>
+            </div>
 
         </form>
     </div>

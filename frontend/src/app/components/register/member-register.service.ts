@@ -7,14 +7,13 @@ import { HttpClient } from '@angular/common/http';
 export class MemberRegisterService {
 
   private backendURL: string = 'http://localhost:9000/api/member'; // ร้องขอข้อมูล จาก URL ตัวนี้ของฝั่ง Backend
-
+  
   constructor(private httpClient: HttpClient) { }
 
   // บันทึกข้อมูล Register
   postItem(value: IMember){
     return this.httpClient.post(this.backendURL, value); //ค่าข้อมูลที่เราจะเอาไปเซฟในฐานข้อมูล
   }
-
 
 }
 
