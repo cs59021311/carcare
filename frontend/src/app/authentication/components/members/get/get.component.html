@@ -28,14 +28,14 @@
             <td>{{ item.mem_address || '-'}}</td>
             <td>{{ item.mem_phone }}</td>
             <td>
-                <a href="#editEmployeeModal" class="edit" data-toggle="modal" (click)="onEditModal(item)">
-                    <i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i>
+                <a href="#editEmployeeModal" class="edit" data-toggle="modal" [routerLink]="['/', AppURL.Authen, AuthURL.Editmember]">
+                    <i class="fa fa-pencil-square-o" data-toggle="tooltip"></i>
                 </a>
-                <a href="#detailEmployeeModal" class="detail" data-toggle="modal" [routerLink]="['/', AppURL.Authen, AuthURL.Detailmember]" >
+                <a href="#detailEmployeeModal" class="detail" data-toggle="modal" [routerLink]="['/', AppURL.Authen, AuthURL.Detailmember]">
                     <i class="fa fa-file-text" data-toggle="tooltip"></i>
                 </a>
                 <a href="#deleteEmployeeModal" class="delete" data-toggle="modal" (click)="onDeleteModal(item)">
-                    <i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i>
+                    <i class="fa fa-trash" data-toggle="tooltip" title="Delete"></i>
                 </a>
             </td>
         </tr>
