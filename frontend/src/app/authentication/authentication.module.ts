@@ -27,6 +27,7 @@ import { ServiceRequestInformationComponent } from './components/service-request
 import { ManagereFundsComponent } from './components/managere-funds/managere-funds.component';
 import { EditMembersComponent } from './components/edit-members/edit-members.component';
 import { DetailMembersComponent } from './components/detail-members/detail-members.component';
+import { AddMembersComponent } from './components/add-members/add-members.component';
 
 @NgModule({
     imports: [
@@ -59,7 +60,8 @@ import { DetailMembersComponent } from './components/detail-members/detail-membe
         ServiceRequestInformationComponent,
         ManagereFundsComponent,
         EditMembersComponent,
-        DetailMembersComponent
+        DetailMembersComponent,
+        AddMembersComponent
 
     ]
 })

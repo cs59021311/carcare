@@ -19,6 +19,7 @@ import { PromotionComponent } from './components/promotion/promotion.component';
 import { ManagereFundsComponent } from './components/managere-funds/managere-funds.component';
 import { EditMembersComponent } from './components/edit-members/edit-members.component';
 import { DetailMembersComponent } from './components/detail-members/detail-members.component';
+import { AddMembersComponent } from './components/add-members/add-members.component';
 
 const RouteLists: Routes = [
     { path: '', redirectTo: AuthURL.Profile, pathMatch: 'full' }, // หน้า default
@@ -55,6 +56,7 @@ const RouteLists: Routes = [
     { path: AuthURL.Managerefunds, component: ManagereFundsComponent },
     { path: AuthURL.Editmember, component: EditMembersComponent },
     { path: AuthURL.Detailmember, component: DetailMembersComponent },
+    { path: AuthURL.Addmembers, component:  AddMembersComponent },
 ];
 
 export const AuthenticationRouting = RouterModule.forChild(RouteLists);

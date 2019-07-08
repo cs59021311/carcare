@@ -15,5 +15,6 @@ export const AuthURL = {
   Servicerequestinformation: 'Service-request-information',
   Managerefunds: 'managere-funds',
   Editmember: 'edit-members',
-  Detailmember: 'detail-members'
+  Detailmember: 'detail-members',
+  Addmembers: 'add-members'
 };
