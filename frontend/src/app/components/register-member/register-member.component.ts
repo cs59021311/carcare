@@ -45,7 +45,8 @@ export class RegisterMemberComponent implements OnInit {
       excep => alert(excep.error.message)
     );
 
-    this.router.navigate(['/', AppURL.Register]);
+    this.router.navigate(['/']);
+    //  AppURL.Register
   }
 
 }
