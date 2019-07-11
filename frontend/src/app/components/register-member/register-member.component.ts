@@ -2,7 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { FormGroup } from '@angular/forms';
 import { AppURL } from 'src/app/app.url';
 import { Router } from '@angular/router';
-import { RegisterMemberService, Temp } from './register-member.service';
+import { RegisterMemberService, IMember } from './register-member.service';
+import { AlertService } from 'src/app/shareds/services/alert.service';
 
 @Component({
   selector: "app-register-member",
@@ -11,17 +12,19 @@ import { RegisterMemberService, Temp } from './register-member.service';
 })
 export class RegisterMemberComponent implements OnInit {
 
-  // สร้าง Model เอาไว้เก็บค่าที่ทำการป้อนข้อมูล
-  public model: Temp = {
-    temp_fname: 'ttt',
-    temp_lname: 'yyy',
-    temp_id_card: '1659985645896',
-    temp_email: 'eee@gmail.com',
-    temp_password: '123456',
-    temp_cpassword: '123456',
-  };
+ // สร้าง Model เอาไว้เก็บค่าที่ทำการป้อนข้อมูล
+    public model: IMember = {
+        mem_username: 'ooo',
+        mem_fname: 'ppp',
+        mem_lname: 'fff',
+        mem_id_card: '1659869569856',
+        mem_email: 'ooo@gmail.com',
+        mem_password: '123456',
+        mem_cpassword: '123456',
+    };
 
   constructor(
+    private alert: AlertService,
     private registerMemberService: RegisterMemberService,
     private router: Router
   ) {}
@@ -33,7 +36,7 @@ export class RegisterMemberComponent implements OnInit {
     // this.router.navigate(['/', AppURL.Register]);
   }
 
-  // ส่งข้อมูลไป save ยัง backend temp
+  // ส่งข้อมูลไป save ยัง backend mem
   public onSubmit(){
     // console.log(this.model);
     this.registerMemberService
@@ -45,7 +48,8 @@ export class RegisterMemberComponent implements OnInit {
       excep => alert(excep.error.message)
     );
 
-    this.router.navigate(['/', AppURL.Register]);
+    this.alert.notify('ลงทะเบียนสำเร็จ!', 'info');  // ลงทะเบียนสำำเร็จให้ แสดง alert
+    this.router.navigate(['/', AppURL.Login]);
   }
 
 }

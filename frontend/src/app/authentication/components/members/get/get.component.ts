@@ -34,7 +34,9 @@ export class GetComponent implements OnInit {
 
   // เมื่อมีการกดปุ่มแก้ไขของแถวนั้นๆ
   onEditModal(item: IMember) {
-    Object.assign(this.memberService.updateModel, item);
+    this.memberService.updateModel = item;
+    console.log(item);
+    // Object.assign(this.memberService.updateModel, item);
   }
 
   // เมื่อมีการกดปุ่มลบข้อมูลของแถวนั้นๆ

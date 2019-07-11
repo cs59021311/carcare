@@ -1,16 +1,7 @@
 import { Component, OnInit, ChangeDetectorRef } from "@angular/core";
 import { MemberService } from "../../services/member.service";
-import {
-  IMembersComponent,
-  IMemberSearchKey,
-  IMemberSearch,
-  IMember
-} from "./members.interface";
-import {
-  IAccount,
-  IRoleAccount,
-  AccountService
-} from "src/app/shareds/services/account.service";
+import {  IMembersComponent,  IMemberSearchKey,  IMemberSearch,  IMember} from "./members.interface";
+import {  IAccount,  IRoleAccount,  AccountService} from "src/app/shareds/services/account.service";
 import { AlertService } from "src/app/shareds/services/alert.service";
 import { PageChangedEvent } from "ngx-bootstrap";
 import { Router } from "@angular/router";
@@ -34,26 +25,26 @@ export class MembersComponent implements IMembersComponent {
 
     // Select/Deselect checkboxes
     var checkbox = $('table tbody input[type="checkbox"]');
-    $("#selectAll").click(function() {
+    $("#selectAll").click(function () {
       if (this.checked) {
-        checkbox.each(function() {
+        checkbox.each(function () {
           this.checked = true;
         });
       } else {
-        checkbox.each(function() {
+        checkbox.each(function () {
           this.checked = false;
         });
       }
     });
-    checkbox.click(function() {
+    checkbox.click(function () {
       if (!this.checked) {
         $("#selectAll").prop("checked", false);
       }
     });
   }
 
-    AppURL = AppURL;
-    AuthURL = AuthURL;
+  AppURL = AppURL;
+  AuthURL = AuthURL;
 
   constructor(
     private httpClient: HttpClient,

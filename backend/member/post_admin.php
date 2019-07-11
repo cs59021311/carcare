@@ -5,19 +5,16 @@ $data = json_decode(file_get_contents('php://input')); // ทำตัวเป�
 // ตรวจสอบ Validation
 if (
 
+    isset($data->mem_username) &&
     isset($data->mem_fname) &&
     isset($data->mem_lname) &&
-    isset($data->mem_email) &&
-    isset($data->mem_address) &&
-    isset($data->mem_phone) &&
     isset($data->mem_id_card) &&
+    isset($data->mem_email) &&
     isset($data->mem_password) &&
-    isset($data->mem_cpassword) &&
     isset($data->mem_service_name) &&
     isset($data->mem_detials) &&
-    isset($data->mem_province) &&
-    isset($data->mem_canton) &&
-    isset($data->mem_district) 
+    isset($data->mem_address) &&
+    isset($data->mem_phone) 
 
 ) {
     // ตรวจสอบค่าว่าง
@@ -28,6 +25,10 @@ if (
     elseif (empty($data->mem_lname)) {
         http_response_code(400); // error
         exit(json_encode(['message' => 'mem_lname is required']));
+    } 
+    elseif (empty($data->mem_username)) {
+        http_response_code(400); // error
+        exit(json_encode(['message' => 'mem_username is required']));
     } 
     elseif (empty($data->mem_email)) {
         http_response_code(400); // error
@@ -41,10 +42,6 @@ if (
         http_response_code(400); // error
         exit(json_encode(['message' => 'mem_password is required']));
     }
-    elseif (empty($data->mem_cpassword)) {
-        http_response_code(400); // error
-        exit(json_encode(['message' => 'mem_cpassword is required']));
-    }
     elseif (empty($data->mem_service_name)) {
         http_response_code(400); // error
         exit(json_encode(['message' => 'mem_service_name is required']));
@@ -53,26 +50,10 @@ if (
         http_response_code(400); // error
         exit(json_encode(['message' => 'mem_detials is required']));
     }
-    elseif (empty($data->mem_province)) {
-        http_response_code(400); // error
-        exit(json_encode(['message' => 'mem_province is required']));
-    }
-    elseif (empty($data->mem_canton)) {
-        http_response_code(400); // error
-        exit(json_encode(['message' => 'mem_canton is required']));
-    }
-    elseif (empty($data->mem_email)) {
-        http_response_code(400); // error
-        exit(json_encode(['message' => 'mem_email is required']));
-    }
-    elseif (empty($data->mem_district)) {
-        http_response_code(400); // error
-        exit(json_encode(['message' => 'mem_district is required']));
-    } 
     elseif (empty($data->mem_address)) {
         http_response_code(400); // error
         exit(json_encode(['message' => 'mem_address is required']));
-    } 
+    }
     elseif (empty($data->mem_phone)) {
         http_response_code(400); // error
         exit(json_encode(['message' => 'mem_phone is required']));
@@ -81,33 +62,27 @@ if (
     $query  = 'INSERT INTO members (
         mem_fname,
         mem_lname,
+        mem_username,
         mem_id_card,
         mem_email,
         mem_password,
-        mem_cpassword,
         mem_service_name,
-        mem_address,
         mem_detials,
-        mem_province,
-        mem_canton,
-        mem_district,
+        mem_address,
         mem_phone
-        ) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'; // bind param
+        ) VALUES(?, ?, ?, ?, ?, ?, ?, ? ,? ,?)'; // bind param
         
         $stmt   = mysqli_prepare($database, $query);
-        mysqli_stmt_bind_param($stmt, 'sssssssssssss', // s คือ String
+        mysqli_stmt_bind_param($stmt, 'ssssssssss', // s คือ String
             $data->mem_fname,
             $data->mem_lname,
+            $data->mem_username,
             $data->mem_id_card,
             $data->mem_email,
             $data->mem_password,
-            $data->mem_cpassword,
             $data->mem_service_name,
-            $data->mem_address,
             $data->mem_detials,
-            $data->mem_province,
-            $data->mem_canton,
-            $data->mem_district,
+            $data->mem_address,
             $data->mem_phone
     ); 
     mysqli_stmt_execute($stmt); // ทำการ execute มันซะ

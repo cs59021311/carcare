@@ -7,9 +7,10 @@
                   <label for="selectAll"></label>
               </span>
             </th>
+            <th>ชื่อผู้ใช้</th>
             <th>ชื่อ-นามสกุล</th>
             <th>อีเมล์</th>
-            <th>ที่อยู่</th>
+            <th>วันที่เพิ่มข้อมูลล่าสุด</th>
             <th>เบอร์โทรศัพท์</th>
             <th></th>
         </tr>
@@ -23,12 +24,14 @@
                   <label for="checkbox1"></label>
               </span>
             </td>
+            <td>{{ item.mem_username }}</td>
             <td>{{ item.mem_fname }} {{ item.mem_lname }}</td>
             <td>{{ item.mem_email }}</td>
-            <td>{{ item.mem_address || '-'}}</td>
+            <td>{{ item.mem_updated || '-'}}</td>
             <td>{{ item.mem_phone }}</td>
             <td>
-                <a href="#editEmployeeModal" class="edit" data-toggle="modal" [routerLink]="['/', AppURL.Authen, AuthURL.Editmember]">
+                <a href="#editEmployeeModal" class="edit" data-toggle="modal" (click)="onEditModal(item)" >
+                        <!-- [routerLink]="['/', AppURL.Authen, AuthURL.Editmember]" -->
                     <i class="fa fa-pencil-square-o" data-toggle="tooltip"></i>
                 </a>
                 <a href="#detailEmployeeModal" class="detail" data-toggle="modal" [routerLink]="['/', AppURL.Authen, AuthURL.Detailmember]">

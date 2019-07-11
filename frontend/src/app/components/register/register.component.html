@@ -51,20 +51,21 @@
 
             <div class="form-group">
                 <label class="control-label">ชื่อร้าน</label>
-                <input class="form-control" type="text" [(ngModel)]="model.mem_service_name" name="mem_service_name" placeholder="กรุณากรอกข้อมูล">
+                <input class="form-control" type="text" name="mem_service_name" placeholder="กรุณากรอกข้อมูล">
             </div>
+            <!-- [(ngModel)]="model.mem_service_name"  -->
 
             <div class="form-group">
                 <label class="control-label">รายละเอียด</label>
-                <textarea class="form-control" [(ngModel)]="model.mem_detials" name="mem_detials" placeholder="กรุณากรอกข้อมูล"></textarea>
+                <textarea class="form-control" name="mem_detials" placeholder="กรุณากรอกข้อมูล"></textarea>
             </div>
 
             <div class="form-group">
                 <label class="control-label">ที่อยู่ (ตรอกซอย,บ้านเลขที่)</label>
-                <textarea class="form-control" [(ngModel)]="model.mem_address" name="mem_address" placeholder="กรุณากรอกข้อมูล"></textarea>
+                <textarea class="form-control" name="mem_address" placeholder="กรุณากรอกข้อมูล"></textarea>
             </div>
 
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label class="control-label">จังหวัด</label>
                 <input class="form-control" type="text" [(ngModel)]="model.mem_province" name="mem_province" placeholder="กรุณากรอกข้อมูล">
             </div>
@@ -77,32 +78,34 @@
             <div class="form-group">
                 <label class="control-label">ตำบล</label>
                 <input class="form-control" type="text" [(ngModel)]="model.mem_district" name="mem_district" placeholder="กรุณากรอกข้อมูล">
-            </div>
+            </div> -->
 
-            <!-- <div class="form-group">
+            <div class="form-group">
                 <label for="">จังหวัด</label>
-                <select class="form-control" [(ngModel)]="model.mem_province" name="mem_province">
+                <select class="form-control"  name="mem_province">
                     <option value="">เลือกจังหวัด</option>
                     <option value="">พิษณุโลก</option>
                 </select>
             </div>
+            <!-- [(ngModel)]="model.mem_province" -->
+
             <div class="form-group">
                 <label for="">อำเภอ</label>
-                <select class="form-control" [(ngModel)]="model.mem_canton" name="mem_canton">
+                <select class="form-control" name="mem_canton">
                     <option value="">เลือกอำเภอ</option>
                     <option value="">วังทอง</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="">ตำบล</label>
-                <select class="form-control" [(ngModel)]="model.mem_district" name="mem_district">
+                <select class="form-control" name="mem_district">
                     <option value="">เลือกตำบล</option>
                     <option value="">บ้านกลาง</option>
                 </select>
-            </div> -->
+            </div>
             <div class="form-group">
                 <label class="control-label">เบอร์โทรศัพท์</label>
-                <input class="form-control" type="text" [(ngModel)]="model.mem_phone" name="mem_phone" placeholder="กรุณากรอกข้อมูล">
+                <input class="form-control" type="text" name="mem_phone" placeholder="กรุณากรอกข้อมูล">
             </div>
 
             <div class="form-group">

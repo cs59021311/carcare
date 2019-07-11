@@ -8,7 +8,7 @@ export class MemberService {
   // private backendURL: string = 'https://localhost:5001/api/member';
 
   private backendURL: string = 'http://localhost:9000/api/member'; // ร้องขอข้อมูล จาก URL ตัวนี้ของฝั่ง Backend
-  public updateModel: IMember = Object.assign({});
+  public updateModel: IMember = Object.assign({}); 
   public deleteModel: IMember = Object.assign({});
   public deleteAllModel: string[] = [];
 
@@ -44,6 +44,7 @@ export interface IMember {
   mem_id?: string;
   mem_fname: string;
   mem_lname: string;
+  mem_username?: string;
   mem_email: string;
   mem_address?: any;
   mem_phone: string;
