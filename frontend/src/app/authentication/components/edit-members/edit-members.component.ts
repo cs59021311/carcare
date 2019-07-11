@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MemberService, IMember } from '../members/member.service';
 
 @Component({
   selector: 'app-edit-members',
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditMembersComponent implements OnInit {
 
-  constructor() { }
+  // สร้าง model เอาไว้เก็บค่า
+  public model: IMember;
+
+  constructor(private memberService: MemberService) { 
+    this.memberService.updateModel;
+  }
 
   ngOnInit() {
   }

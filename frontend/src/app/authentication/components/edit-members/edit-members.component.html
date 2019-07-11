@@ -26,7 +26,7 @@
 
           <!-- ส่วนฟอร์ม -->
           <div class="tile-body"></div>
-              <form [formGroup]="form" (submit)="onSubmit()">
+              <form >
                   <div class="row">
                       <div class="col-sm-4">
                           <div class="form-group">
@@ -34,7 +34,7 @@
                             <!-- <img *ngIf="form.value.image" [src]="form.value.image" class="img-fluid img-thumbnail"> -->
                           </div>
                           <div class="form-group">
-                              <input type="file" (change)="onConvertImage(inputFile)" #inputFile>
+                              <input type="file" #inputFile>
                           </div>
                       </div>
                       <div class="col-sm-8">
@@ -42,47 +42,47 @@
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="">ชื่อ</label>
-                                    <input type="text" class="form-control" placeholder="กรุณากรอกข้อมูล" formControlName="firstname">
+                                    <input type="text" class="form-control" placeholder="กรุณากรอกข้อมูล" >
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="">นามสกุล</label>
-                                    <input type="text" class="form-control" placeholder="กรุณากรอกข้อมูล" formControlName="lastname">
+                                    <input type="text" class="form-control" placeholder="กรุณากรอกข้อมูล" >
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="">เลขประจำตัวประชาชน</label>
-                            <input type="text" class="form-control" placeholder="กรุณากรอกข้อมูล" formControlName="">
+                            <input type="text" class="form-control" placeholder="กรุณากรอกข้อมูล" >
                         </div>
                         <div class="form-group">
                             <label for="">อีเมล์</label>
-                            <input type="text" class="form-control" placeholder="กรุณากรอกข้อมูล" formControlName="email">
+                            <input type="text" class="form-control" placeholder="กรุณากรอกข้อมูล" >
                         </div>
                         <div class="form-group">
                           <label for="">รหัสผ่าน</label>
-                          <input type="text" class="form-control" placeholder="กรุณากรอกข้อมูล" formControlName="password">
+                          <input type="text" class="form-control" placeholder="กรุณากรอกข้อมูล" >
                         </div>
                         <br>
                         <div class="form-group">
                           <label for="">ชื่อร้าน</label>
-                          <input type="text" class="form-control" placeholder="กรุณากรอกข้อมูล" formControlName="">
+                          <input type="text" class="form-control" placeholder="กรุณากรอกข้อมูล" >
                         </div>
                         <div class="form-group">
                           <label for="">รายละเอียด</label>
-                          <textarea type="text" class="form-control" placeholder="กรุณากรอกข้อมูล" formControlName=""></textarea>
+                          <textarea type="text" class="form-control" placeholder="กรุณากรอกข้อมูล" ></textarea>
                         </div>
                         <div class="form-group">
                           <label for="">ที่อยู่</label>
-                          <textarea type="text" class="form-control" placeholder="กรุณากรอกข้อมูล" formControlName=""></textarea>
+                          <textarea type="text" class="form-control" placeholder="กรุณากรอกข้อมูล" ></textarea>
                         </div>
 
                         <!-- จังหวัด อำเภอ ตำบล -->
 
                         <div class="form-group">
                           <label for="">เบอร์โทรศัพท์</label>
-                          <input type="text" class="form-control" placeholder="กรุณากรอกข้อมูล" formControlName="">
+                          <input type="text" class="form-control" placeholder="กรุณากรอกข้อมูล">
                         </div>
 
                         
