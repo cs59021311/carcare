@@ -10,7 +10,7 @@ declare const $: any;
 })
 export class PostComponent implements OnInit {
 
-  @Input('getComp') getComp: GetComponent; //ทำ declarelater 
+  @Input('getComp') getComp: GetComponent; //ทำ declarelater
 
   // สร้าง model เอาไว้เก็บค่าที่อยู่ใน Input
   public model: IMember = {
@@ -26,7 +26,7 @@ export class PostComponent implements OnInit {
   ngOnInit() {
   }
 
-  // ส่งข้อมูลไปบันทึกที่ Backend 
+  // ส่งข้อมูลไปบันทึกที่ Backend
   public onSubmit() {
     this.memberService
       .postItem(this.model)
@@ -42,7 +42,7 @@ export class PostComponent implements OnInit {
   }
 
   // เคลียร์ค่าฟอร์ม
-  public onResetModel(){
+  public onResetModel() {
     this.model = {
       mem_fname: '',
       mem_lname: '',

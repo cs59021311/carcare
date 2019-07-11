@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class MemberRegisterService {
 
   private backendURL: string = 'http://localhost:9000/api/member'; // ร้องขอข้อมูล จาก URL ตัวนี้ของฝั่ง Backend
-  
+
   constructor(private httpClient: HttpClient) { }
 
   // บันทึกข้อมูล Register
@@ -42,4 +42,4 @@ export interface IMember {
   mem_lat?: any;
   mem_long?: any;
 
-} 
+}

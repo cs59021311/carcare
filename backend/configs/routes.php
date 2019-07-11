@@ -5,6 +5,9 @@
 $routes['/api/temp']['GET'] = './member/temp/get_temp.php';        
 $routes['/api/temp']['POST'] = './member/temp/post_temp.php'; 
 
+// Store
+$routes['/api/store']['POST'] = './member/store/post_store.php'; 
+
 // member
 $routes['/api/member']['GET'] = './member/get.php'; // เรียกใช้งาน
 $routes['/api/member']['POST'] = './member/post.php'; // สร้างตัวเรียก และลงทะเบียน rount

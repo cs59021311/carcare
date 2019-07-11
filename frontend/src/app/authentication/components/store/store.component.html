@@ -23,12 +23,17 @@
       <div class="tab-content">
         <div class="tab-pane active" id="user-timeline">
           <div class="timeline-post">
-            <div class="post-media"><a href="#"><img src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/48.jpg"></a>
+              <h4 class="line-head"><i class="fa fa-user"></i> ข้อมูลร้าน</h4>
+              <br>
+              ชื่อร้าน
+
+            <!-- <div class="post-media"><a href="#"><img src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/48.jpg"></a>
               <div class="content">
                 <h5><a href="#">John Doe</a></h5>
                 <p class="text-muted"><small>2 January at 9:30</small></p>
               </div>
-            </div>
+            </div> -->
+
             <!-- <div class="post-content">
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,	quis tion ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </div> -->
@@ -38,7 +43,7 @@
         <div class="tab-pane fade" id="user-settings">
           <div class="tile user-settings">
             <h4 class="line-head"><i class="fa fa-edit"></i> เพิ่มข้อมูลร้าน</h4>
-            <form>
+            <form (submit)="onSubmit()" [noValidate]= false>
               <!-- <div class="row mb-4">
                 <div class="col-md-4">
                   <label>First Name</label>
@@ -48,36 +53,36 @@
               <div class="row">
                 <div class="col-md-8 mb-4">
                   <label>ชื่อร้าน</label>
-                  <input class="form-control" type="text">
+                  <input class="form-control" [(ngModel)]="model.mem_service_name" name="mem_service_name" type="text" required>
                 </div>
                 <div class="col-md-8 mb-4">
                     <label>รายละเอียด</label>
-                    <input class="form-control" type="text">
+                    <input class="form-control" [(ngModel)]="model.mem_detials" name="mem_detials" type="text" required>
                 </div>
 
                 <div class="col-md-8 mb-4">
                     <label>ที่อยู่</label>
-                    <input class="form-control" type="text">
+                    <input class="form-control" [(ngModel)]="model.mem_address" name="mem_address" type="text" required>
                 </div>
                 <div class="col-md-8 mb-4">
                     <label>จังหวัด</label>
-                    <input class="form-control" type="text">
+                    <input class="form-control" [(ngModel)]="model.mem_province" name="mem_province" type="text" required>
                 </div>
                 <div class="col-md-8 mb-4">
                     <label>อำเภอ</label>
-                    <input class="form-control" type="text">
+                    <input class="form-control" [(ngModel)]="model.mem_canton" name="mem_canton" type="text" required>
                 </div>
                 <div class="col-md-8 mb-4">
                     <label>ตำบล</label>
-                    <input class="form-control" type="text">
+                    <input class="form-control" [(ngModel)]="model.mem_district" name="mem_district" type="text" required>
                 </div>
                 <div class="clearfix"></div>
                 <div class="col-md-8 mb-4">
                   <label>เบอร์โทรศัพท์</label>
-                  <input class="form-control" type="text">
+                  <input class="form-control" [(ngModel)]="model.mem_phone" name="mem_phone" type="text" required>
                 </div>
 
-                <div class="col-md-8 mb-4">
+                <!-- <div class="col-md-8 mb-4">
                     <label class="control-label">รูปร้าน</label>
                     <div class="form-group">
                         <input type="file" #inputFile>
@@ -89,14 +94,16 @@
                     <div class="form-group">
                         <input type="file" #inputFile>
                     </div>
-                </div>
+                </div> -->
 
               </div>
               <div class="row mb-10">
                 <div class="col-md-12">
-                  <button class="btn btn-primary" type="button"><i class="fa fa-fw fa-lg fa fa-save"></i> บันทึกข้อมูล</button>
+                  <button class="btn btn-primary" type="submit">
+                  <i class="fa fa-fw fa-lg fa fa-save"></i> บันทึกข้อมูล</button>
                 </div>
               </div>
+
             </form>
           </div>
         </div>
