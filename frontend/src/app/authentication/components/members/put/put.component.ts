@@ -35,7 +35,7 @@ export class PutComponent implements OnInit {
       },
       excep => alert(excep.error.message)
     );
-    
+
   }
 
 }
