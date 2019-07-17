@@ -15,7 +15,7 @@ import { AddMemberService, IAdmin } from './add-member.service';
 export class AddMembersComponent implements OnInit {
 
   public addminItem: IAdmin[] = [];
-  // @Input('getComp') getComp: GetComponent; //ทำ declarelater 
+  // @Input('getComp') getComp: GetComponent; //ทำ declarelater
 
   // สร้าง model เอาไว้เก็บค่าที่อยู่ใน label
   public model: IMember = {
@@ -41,26 +41,14 @@ export class AddMembersComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit() {
-    this.addMemberService
-    .getAdminItem()
-    .subscribe(result => {
-      // console.log(result);
-      this.addminItem = result;
-    });
+    // this.addMemberService
+    // .getAdminItem()
+    // .subscribe(result => {
+    //   // console.log(result);
+    //   this.addminItem = result;
+    // });
   }
 
-  public TestAdmin() {
-    // var hour = new Date().getHours();
-    var x = 1;
-    var y = 1;
-    var z ;
-    if (x == y) {
-      z = "ok";
-    } else {
-      z = "no";
-    }
-    document.getElementById("demo").innerHTML = z;
-  }
 
   // ส่งข้อมูลไปบันทึกที่ backend
   public onSubmit(){
@@ -80,7 +68,7 @@ export class AddMembersComponent implements OnInit {
 
   // public onClickTest() {
   //   document.getElementById("demo").innerHTML = "Paragraph changed.";
-    
+
   //   console.log(this.model);
   // }
 
