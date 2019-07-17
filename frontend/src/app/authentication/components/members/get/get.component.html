@@ -3,9 +3,9 @@
         <tr>
             <th>
                 <span class="custom-checkbox">
-                  <input type="checkbox" [(ngModel)]="checkAll" (ngModelChange)="onCheckAll()">
-                  <label for="selectAll"></label>
-              </span>
+                    <input type="checkbox" [(ngModel)]="checkAll" (ngModelChange)="onCheckAll()">
+                    <label for="selectAll"></label>
+                </span>
             </th>
             <th>ชื่อผู้ใช้</th>
             <th>ชื่อ-นามสกุล</th>
@@ -16,25 +16,26 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let item of memberItems">
+        <tr *ngFor="let item of memberItems | pagination : startPage : limitPage">
             <!-- เรียกใช้ ngFor -->
             <td>
                 <span class="custom-checkbox">
-                  <input type="checkbox" [(ngModel)]="item.checked" (ngModelChange)="onCheck()">
-                  <label for="checkbox1"></label>
-              </span>
+                    <input type="checkbox" [(ngModel)]="item.checked" (ngModelChange)="onCheck()">
+                    <label for="checkbox1"></label>
+                </span>
             </td>
             <td>{{ item.mem_username }}</td>
             <td>{{ item.mem_fname }} {{ item.mem_lname }}</td>
             <td>{{ item.mem_email }}</td>
             <td>{{ item.mem_updated || '-'}}</td>
-            <td>{{ item.mem_phone }}</td>
+            <td>{{ item.mem_phone || '-'}}</td>
             <td>
-                <a href="#editEmployeeModal" class="edit" data-toggle="modal" (click)="onEditModal(item)" >
-                        <!-- [routerLink]="['/', AppURL.Authen, AuthURL.Editmember]" -->
+                <a href="#editEmployeeModal" class="edit" data-toggle="modal" (click)="onEditModal(item)">
+                    <!-- [routerLink]="['/', AppURL.Authen, AuthURL.Editmember]" -->
                     <i class="fa fa-pencil-square-o" data-toggle="tooltip"></i>
                 </a>
-                <a href="#detailEmployeeModal" class="detail" data-toggle="modal" [routerLink]="['/', AppURL.Authen, AuthURL.Detailmember]">
+                <a href="#detailEmployeeModal" class="detail" data-toggle="modal"
+                    [routerLink]="['/', AppURL.Authen, AuthURL.Detailmember]">
                     <i class="fa fa-file-text" data-toggle="tooltip"></i>
                 </a>
                 <a href="#deleteEmployeeModal" class="delete" data-toggle="modal" (click)="onDeleteModal(item)">
@@ -47,14 +48,20 @@
 </table>
 
 <div class="clearfix">
-    <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
+    <div class="hint-text">
+        Showing <b>{{limitPage}}</b> out of <b>{{memberItems.length}}</b> entries
+    </div>
     <ul class="pagination">
-        <li class="page-item disabled"><a href="#">Previous</a></li>
-        <li class="page-item"><a href="#" class="page-link">1</a></li>
-        <li class="page-item"><a href="#" class="page-link">2</a></li>
-        <li class="page-item active"><a href="#" class="page-link">3</a></li>
-        <li class="page-item"><a href="#" class="page-link">4</a></li>
-        <li class="page-item"><a href="#" class="page-link">5</a></li>
-        <li class="page-item"><a href="#" class="page-link">Next</a></li>
-    </ul>
+            <li class="page-item" [ngClass]="{ disabled: startPage <= 1 }">
+              <a class="page-link" (click)="onPrevPage()">Previous</a>
+            </li>
+        
+            <li class="page-item" [ngClass]="{ active: startPage == page }" *ngFor="let page of paginations">
+              <a class="page-link" (click)="startPage = page">{{ page }}</a>
+            </li>
+        
+            <li class="page-item" [ngClass]="{ disabled: startPage >= paginations.length }">
+              <a class="page-link" (click)="onNexPage()">Next</a>
+            </li>
+          </ul>
 </div>

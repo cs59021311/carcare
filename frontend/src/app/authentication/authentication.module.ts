@@ -28,6 +28,7 @@ import { ManagereFundsComponent } from './components/managere-funds/managere-fun
 import { EditMembersComponent } from './components/edit-members/edit-members.component';
 import { DetailMembersComponent } from './components/detail-members/detail-members.component';
 import { AddMembersComponent } from './components/add-members/add-members.component';
+import { PaginationPipe } from './components/pipes/pagination.pipe';
 
 @NgModule({
     imports: [
@@ -61,7 +62,8 @@ import { AddMembersComponent } from './components/add-members/add-members.compon
         ManagereFundsComponent,
         EditMembersComponent,
         DetailMembersComponent,
-        AddMembersComponent
+        AddMembersComponent,
+        PaginationPipe
 
     ]
 })

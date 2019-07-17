@@ -41,26 +41,26 @@ export class AddMembersComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit() {
-    this.addMemberService
-    .getAdminItem()
-    .subscribe(result => {
-      // console.log(result);
-      this.addminItem = result;
-    });
+    // this.addMemberService
+    // .getAdminItem()
+    // .subscribe(result => {
+    //   // console.log(result);
+    //   this.addminItem = result;
+    // });
   }
 
-  public TestAdmin() {
-    // var hour = new Date().getHours();
-    var x = 1;
-    var y = 1;
-    var z ;
-    if (x == y) {
-      z = "ok";
-    } else {
-      z = "no";
-    }
-    document.getElementById("demo").innerHTML = z;
-  }
+  // public TestAdmin() {
+  //   // var hour = new Date().getHours();
+  //   var x = 1;
+  //   var y = 1;
+  //   var z ;
+  //   if (x == y) {
+  //     z = "ok";
+  //   } else {
+  //     z = "no";
+  //   }
+  //   document.getElementById("demo").innerHTML = z;
+  // }
 
   // ส่งข้อมูลไปบันทึกที่ backend
   public onSubmit(){
@@ -75,7 +75,7 @@ export class AddMembersComponent implements OnInit {
       excep => alert(excep.error.message)
     );
     this.alert.notify('เพิ่มข้อมูลสำเร็จ!', 'info');  // ลงทะเบียนสำำเร็จให้ แสดง alert
-    this.router.navigate(['/', AppURL.Authen, AuthURL.Member]);
+    // this.router.navigate(['/', AppURL.Authen, AuthURL.Member]);
   }
 
   // public onClickTest() {
