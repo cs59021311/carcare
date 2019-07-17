@@ -49,7 +49,6 @@ export class AddMembersComponent implements OnInit {
     // });
   }
 
-
   // ส่งข้อมูลไปบันทึกที่ backend
   public onSubmit(){
     // console.log(this.model);
@@ -63,7 +62,7 @@ export class AddMembersComponent implements OnInit {
       excep => alert(excep.error.message)
     );
     this.alert.notify('เพิ่มข้อมูลสำเร็จ!', 'info');  // ลงทะเบียนสำำเร็จให้ แสดง alert
-    this.router.navigate(['/', AppURL.Authen, AuthURL.Member]);
+    // this.router.navigate(['/', AppURL.Authen, AuthURL.Member]);
   }
 
   // public onClickTest() {
